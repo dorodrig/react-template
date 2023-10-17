@@ -1,5 +1,5 @@
 import './App.css'
-
+import Heards from './components/Heards';
 function App() {
   const nombre = 'David Rodriguez';
   const edad = 24;
@@ -11,6 +11,7 @@ function App() {
       <p>Mi nombre es {nombre}</p>
       {/* esto es un if en jsx */}
       <p>{edad> 18 ?"adulto":"Niño"}</p>
+      <Heards/>
     </div>
   )
 }
