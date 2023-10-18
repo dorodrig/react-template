@@ -1,7 +1,6 @@
 import './App.css'
 import Heards from './components/Heards';
 import Tasklist from './components/Tasklist';
-import Task from './components/Tablet';
 import Tablet from './components/Tablet';
 function App() {
   const nombre = 'David Rodriguez';
@@ -10,10 +9,11 @@ function App() {
   return (
     <div className='app'>
       {/* <h1>¡Hola, mundo!</h1>
-      <p>aca estamos mirando que con jsx puedo agregar codigo html y css con react</p>
-      <p>Mi nombre es {nombre}</p>
+      <p>aca estamos mirando que con jsx puedo agregar codigo html y css con react</p>     
       esto es un if en jsx */}
-      {/* <p>{edad> 18 ?"adulto":"Niño"}</p> */}
+       <p>Mi nombre es {nombre}</p>
+       <p>Mi edad es {edad}</p>
+      <p>{edad> 18 ?"soy adulto":"soy Niño"}</p>
       <Heards/>
       <Tasklist/>
       <Tablet/>
