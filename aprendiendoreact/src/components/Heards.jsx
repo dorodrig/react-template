@@ -1,10 +1,10 @@
 import Logo from './logo';
+import Title from './title';
 const header=()=>{
 return(
     <header>
-
-        <Logo/>
-        <h1>React componente header</h1>
+     <Logo/>
+     <Title text = 'Primer titulo' small='subtitulo'/>
     </header>
     
 
