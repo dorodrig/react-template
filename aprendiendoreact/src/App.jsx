@@ -1,7 +1,8 @@
 import './App.css'
 import Heards from './components/Heards';
 import Tasklist from './components/Tasklist';
-import Task from './components/Tasklist';
+import Task from './components/Tablet';
+import Tablet from './components/Tablet';
 function App() {
   const nombre = 'David Rodriguez';
   const edad = 24;
@@ -15,7 +16,7 @@ function App() {
       {/* <p>{edad> 18 ?"adulto":"Niño"}</p> */}
       <Heards/>
       <Tasklist/>
-      <Task/>
+      <Tablet/>
     </div>
   )
 }

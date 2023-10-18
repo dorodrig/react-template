@@ -8,29 +8,22 @@ const task =[
 
 const Tablet = () => {
     return (
- <table>
-     <thead>
-
-        <tr>
-            <th>id</th>   
-            <th>Hobbies</th>  
-        </tr>        
+      <table border="2px">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Hobbie</th>
+          </tr>
         </thead>
-        <tbody>          
-                  
-        {   
-             // dentro{} se puede escribir codigo js<li key={task.id}>{task.text}</li>)
-             // un map que trae el arreglo de tareas y lo recorre y lo muestra en una lista "Importante el key como identificador"
-            //falta agregar style
-             task.map((task) => (
-                 <tr key={task.id}>                    
-                    <td>{task.id}</td>
-                    <td>{task.text}</td>
-                </tr> 
-            ))
-        }
-       </tbody>
-     </table>
-    )
-}
+        <tbody>
+          {task.map((task) => (
+            <tr key={task.id}>
+              <td>{task.id}</td>
+              <td>{task.text}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  };
 export default Tablet 
