@@ -15,10 +15,11 @@
   }
   &__button {
     border: none;
-    background: #494699;
+    background: hsl(231, 95%, 59%);
     color: #fff;
     padding: 7px;
     border-radius: 5px;
     font-family: "Montserrat", sans-serif;
+    cursor: pointer;
   }
 }
