@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 //npm install prop-types para poder llamar a PropTypes
+//npm init vite@latest --template
 import "../styles/Title.scss";
 
 const Title = ({ text, small }) => {

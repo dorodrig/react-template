@@ -1,3 +1,4 @@
+// para iniciar un proyecto de react con vitel se ejecuta le comando npm init vite@latest --template react
 import { useState } from "react";
 
 import AddTaskForm from "./components/AddTaskForm";
