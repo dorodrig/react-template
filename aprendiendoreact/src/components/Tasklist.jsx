@@ -5,21 +5,27 @@ const task =[
     {id:4,text : 'Playing football'}
 ];
 
-
+ //const task =[];
+ const user = 'david';
 const Tasklist = () => {
     return (
-    //   <ul>
-    //      <il> Runnign </il> esta es una lista de tareas directa pero se mejor para utilizar con arreglo *
-    //      <il> Programming  </il>
-    //     <il>Listening music  </il> 
-    //   </ul>
+   <>
+   <p> welcome,{user||"Guest"}</p>
+{//expresion ternaria 
+   task.length < 0 ? (<h1>No taks</h1>) 
+   :(
      <ul>
-        {   
-             // dentro{} se puede escribir codigo js
+        {    /// dentro{} se puede escribir codigo js
              // un map que trae el arreglo de tareas y lo recorre y lo muestra en una lista "Importante el key como identificador"
-            task.map((task) => <li key={task.id}>{task.text}</li>)
+        task.map((task) => <li key={task.id}>{task.text}</li>)            
         }
      </ul>
-    )
+   )}
+{task.length % 2 === 0 && <h1>La cantidad de tareas es par</h1> }
+
+   
+   </>
+    
+    );
 }
 export default Tasklist 

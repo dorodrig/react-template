@@ -16,7 +16,7 @@ function App() {
       <p>{edad> 18 ?"soy adulto":"soy Niño"}</p>
       <Heards/>
       <Tasklist/>
-      <Tablet/>
+    
     </div>
   )
 }
