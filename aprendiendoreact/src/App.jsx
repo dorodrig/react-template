@@ -5,6 +5,7 @@ import AddTaskForm from "./components/AddTaskForm";
 import Header from "./components/Header";
 import TaskList from "./components/TaskList";
 import "./styles/App.scss";
+//variables de entorno
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
    
   try {
     //hace el llamado al backend con api rest
-    const result = await axios.get('http://localhost:3000/tasks');
+    const result = await axios.get(import.meta.env.VITE_BACKEND_URL);
     //si la respuesta es 200 entonces se modifica el estado
     if (result.status === 200){
       // con el setTasks se modifica los campos del formulario
@@ -30,13 +31,23 @@ function App() {
  getTasks();
 
   }, []);
-  const onDeleteHandler = (id) => {
-    if (confirm("Are you sure you want to delete the task?")) {
-      // Elimina el elemento filtrando el arreglo por el id de cada tarea
-      // No se puede modificar la variable tasks porque es INMUTABLE
-      const resultado = tasks.filter((tarea) => tarea.id !== id);
-      // Modifica el estado
-      setTasks(resultado);
+  const onDeleteHandler = async (id) => {
+    try {
+      if (confirm("Are you sure you want to delete the task?")) {
+        // Elimina el elemento filtrando el arreglo por el id de cada tarea
+        // No se puede modificar la variable tasks porque es INMUTABLE
+        //hace el llamado al backend con api rest
+      const result = axios.delete(`${import.meta.env.VITE_BACKEND_URL}${id}`);
+      //si la respuesta es 200 entonces se modifica el estado
+       if (result.status === 200){
+        // con el setTasks se modifica los campos del formulario   
+        const resultado = tasks.filter((tarea) => tarea.id !== id);
+        // Modifica el estado
+        setTasks(resultado);
+        }
+    }
+    }catch (error) {
+      console.log("No hubo conexion con el backend");
     }
   };
 
