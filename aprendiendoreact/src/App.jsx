@@ -37,7 +37,7 @@ function App() {
         // Elimina el elemento filtrando el arreglo por el id de cada tarea
         // No se puede modificar la variable tasks porque es INMUTABLE
         //hace el llamado al backend con api rest
-      const result = axios.delete(`${import.meta.env.VITE_BACKEND_URL}${id}`);
+      const result = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}${id}`);
       //si la respuesta es 200 entonces se modifica el estado
        if (result.status === 200){
         // con el setTasks se modifica los campos del formulario   
@@ -51,16 +51,21 @@ function App() {
     }
   };
 
-  const onCreateHandler = (text) => {
-    // Crea un objeto para la nueva tarea
-    const newTask = {
-      id: crypto.randomUUID(),
+  const onCreateHandler = async (text) => {
+    try {
+       // Crea un objeto para la nueva tarea
+    const newTask = {// id: crypto.randomUUID(), genera un id aleatorio      
       text,
     };
+    const result = await axios.post(import.meta.env.VITE_BACKEND_URL, newTask);
     // Crea un nuevo arreglo basado en los elementos del arreglo tasks agregando la nueva al nueva tarea al final
-    const newTasks = [...tasks, newTask];
+     if(result.status === 201){
+    const newTasks = [...tasks, result.data];
     // Modifica el estado
     setTasks(newTasks);
+
+    } 
+  } catch (error) {console.log("No hubo conexion con el backend");}
   };
 
   return (
