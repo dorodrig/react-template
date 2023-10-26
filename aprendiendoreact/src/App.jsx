@@ -5,12 +5,26 @@ import AddTaskForm from "./components/AddTaskForm";
 import Header from "./components/Header";
 import TaskList from "./components/TaskList";
 import "./styles/App.scss";
+import LocalizationContext from "./context/LocalizationContext";
+import SelectLanguage from "./components/SelectLanguage";
 //variables de entorno
-
+// cambio de idioma con hooks
+ const local = {
+  es: {
+    title: "Administrador de Tareas",
+    count: "Cantidad",
+  },
+  en: {
+    title: "Task Manager",
+    count: "Count",
+  },
+};
 
 function App() {
   // esta utilizando hooks para crear un estado
   const [tasks, setTasks] = useState([]);
+ const [language, setLanguage] = useState(local.en);
+
   //esta utilizando hooks para generar un efecto ademas recibe como parametro una funcion y un arreglo de dependencias
   useEffect(()=> {
  const  getTasks = async () =>{
@@ -67,13 +81,19 @@ function App() {
     } 
   } catch (error) {console.log("No hubo conexion con el backend");}
   };
-
+  const handlerLanguagesChanges =(lang)=>{
+    setLanguage(local[lang]);
+  }
+  
   return (
+    <LocalizationContext.Provider value={language}>
     <div className="app">
       <Header count={tasks.length} />
+      <SelectLanguage onChangeLanguages={handlerLanguagesChanges} />
       <AddTaskForm onCreateTask={onCreateHandler} />
       <TaskList tasks={tasks} onDeleteTask={onDeleteHandler} />
     </div>
+    </LocalizationContext.Provider>
   );
 }
 
