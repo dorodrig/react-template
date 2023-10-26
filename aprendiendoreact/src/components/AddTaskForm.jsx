@@ -1,9 +1,12 @@
+import { useContext } from "react";
 import { useState } from "react";
 import PropTypes from "prop-types";
 
 import "../styles/Form.scss";
-
+import LocalizationContext from "../context/LocalizationContext";
 const AddTaskForm = ({ onCreateTask }) => {
+  const local = useContext(LocalizationContext);
+  LocalizationContext;
   const [text, setText] = useState("");
 
   const handleSubmit = (event) => {
@@ -22,14 +25,14 @@ const AddTaskForm = ({ onCreateTask }) => {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <label className="form__label">New task:</label>
+      <label className="form__label">{local.newTask}</label>
       <input
         type="text"
         className="form__input"
         value={text}
         onChange={(event) => setText(event.target.value)}
       />
-      <button className="form__button">Add</button>
+      <button className="form__button">{local.add}</button>
     </form>
   );
 };

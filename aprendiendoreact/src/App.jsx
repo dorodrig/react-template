@@ -13,11 +13,22 @@ import SelectLanguage from "./components/SelectLanguage";
   es: {
     title: "Administrador de Tareas",
     count: "Cantidad",
+    newTask: "Nueva Tarea",
+    add : "Agregar",
   },
   en: {
     title: "Task Manager",
     count: "Count",
+    newTask: "New Task",
+    add : "Add",
   },
+  fr:{
+    title: "Gestionnaire de tâches",
+    count:"Quantité",
+    newTask:"Nouvelle tâche",
+    add:"Ajouter",
+  },
+  
 };
 
 function App() {
@@ -82,6 +93,7 @@ function App() {
   } catch (error) {console.log("No hubo conexion con el backend");}
   };
   const handlerLanguagesChanges =(lang)=>{
+    //en caso de los objetos se puede [] para acceder a las propiedades o . para acceder a las propiedades
     setLanguage(local[lang]);
   }
   

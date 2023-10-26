@@ -9,6 +9,7 @@ import LocalizationContext from "../context/LocalizationContext";
 const Title = ({ count }) => {
   // Obtiene el contexto
   const local = useContext(LocalizationContext);
+  LocalizationContext;
 
   return (
     <div className="title">
