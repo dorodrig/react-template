@@ -9,28 +9,8 @@ import LocalizationContext from "./context/LocalizationContext";
 import SelectLanguage from "./components/SelectLanguage";
 //variables de entorno
 // cambio de idioma con hooks
- const local = {
-  es: {
-    title: "Administrador de Tareas",
-    count: "Cantidad",
-    newTask: "Nueva Tarea",
-    add : "Agregar",
-  },
-  en: {
-    title: "Task Manager",
-    count: "Count",
-    newTask: "New Task",
-    add : "Add",
-  },
-  fr:{
-    title: "Gestionnaire de tâches",
-    count:"Quantité",
-    newTask:"Nouvelle tâche",
-    add:"Ajouter",
-  },
-  
-};
-
+import local from "./context/LocalizationData";
+//VITE_BACKEND_URL=http://localhost:3000/tasks/ esto es para crear el ambiente .env.local cuando se clone el repo
 function App() {
   // esta utilizando hooks para crear un estado
   const [tasks, setTasks] = useState([]);
