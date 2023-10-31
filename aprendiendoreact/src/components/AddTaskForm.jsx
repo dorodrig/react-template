@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import "../styles/Form.scss";
 import LocalizationContext from "../context/LocalizationContext";
 const AddTaskForm = ({ onCreateTask }) => {
-  const local = useContext(LocalizationContext);
+  const {language} = useContext(LocalizationContext);
   LocalizationContext;
   const [text, setText] = useState("");
 
@@ -25,14 +25,14 @@ const AddTaskForm = ({ onCreateTask }) => {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <label className="form__label">{local.language.newTask}</label>
+      <label className="form__label">{language.newTask}</label>
       <input
         type="text"
         className="form__input"
         value={text}
         onChange={(event) => setText(event.target.value)}
       />
-      <button className="form__button">{local.language.add}</button>
+      <button className="form__button">{language.add}</button>
     </form>
   );
 };

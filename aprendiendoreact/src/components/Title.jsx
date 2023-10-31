@@ -8,14 +8,14 @@ import LocalizationContext from "../context/LocalizationContext";
 
 const Title = ({ count }) => {
   // Obtiene el contexto
-  const local = useContext(LocalizationContext);
+  const {language} = useContext(LocalizationContext);
   LocalizationContext;
 
   return (
     <div className="title">
-      <h2>{local.language.title}</h2>
+      <h2>{language.title}</h2>
       <h5>
-        {local.language.count}: {count}
+        {language.count}: {count}
       </h5>
     </div>
   );
