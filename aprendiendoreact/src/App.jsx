@@ -1,4 +1,6 @@
 // para iniciar un proyecto de react con vitel se ejecuta le comando npm init vite@latest --template react
+//VITE_BACKEND_URL=http://localhost:3000/tasks/ esto es para crear el ambiente .env.local cuando se clone el repo
+
 import { useEffect, useState } from "react";
 import axios from "axios";
 import AddTaskForm from "./components/AddTaskForm";
@@ -10,7 +12,7 @@ import SelectLanguage from "./components/SelectLanguage";
 //variables de entorno
 // cambio de idioma con hooks
 import local from "./context/LocalizationData";
-//VITE_BACKEND_URL=http://localhost:3000/tasks/ esto es para crear el ambiente .env.local cuando se clone el repo
+
 function App() {
   // esta utilizando hooks para crear un estado
   const [tasks, setTasks] = useState([]);
@@ -78,7 +80,7 @@ function App() {
   }
   
   return (
-    <LocalizationContext.Provider value={language}>
+    <LocalizationContext.Provider value={{language,setLanguage}}>
     <div className="app">
       <Header count={tasks.length} />
       <SelectLanguage onChangeLanguages={handlerLanguagesChanges} />

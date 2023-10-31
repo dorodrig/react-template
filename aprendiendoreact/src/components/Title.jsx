@@ -13,9 +13,9 @@ const Title = ({ count }) => {
 
   return (
     <div className="title">
-      <h2>{local.title}</h2>
+      <h2>{local.language.title}</h2>
       <h5>
-        {local.count}: {count}
+        {local.language.count}: {count}
       </h5>
     </div>
   );

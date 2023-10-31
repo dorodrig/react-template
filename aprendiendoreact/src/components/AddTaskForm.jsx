@@ -25,14 +25,14 @@ const AddTaskForm = ({ onCreateTask }) => {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <label className="form__label">{local.newTask}</label>
+      <label className="form__label">{local.language.newTask}</label>
       <input
         type="text"
         className="form__input"
         value={text}
         onChange={(event) => setText(event.target.value)}
       />
-      <button className="form__button">{local.add}</button>
+      <button className="form__button">{local.language.add}</button>
     </form>
   );
 };
