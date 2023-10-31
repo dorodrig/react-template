@@ -9,9 +9,9 @@ const SelectLanguage = () => {
     
  return(
   <div className='Languages'>
-  <span onClick={()=>setLanguage(local["es"])}> 🏴‍☠️ Español </span>
-  <span onClick={()=>setLanguage(local["en"])}> 🏳 Ingles</span> 
-  <span onClick={()=>setLanguage(local["fr"])}> 🥐 Frances</span>
+  <span onClick={()=>setLanguage(local.es)}> 🏴‍☠️ Español </span>
+  <span onClick={()=>setLanguage(local.en)}> 🏳 Ingles</span> 
+  <span onClick={()=>setLanguage(local.fr)}> 🥐 Frances</span>
 
   </div>
 
