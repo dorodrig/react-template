@@ -1,10 +1,10 @@
-
+//Para installar sass npm install sass -D
 // para iniciar el proyecto se debe installar  npm init vite@latest --redux-toolkit-shopping-cart --template react
+import NavBar from "./components/navbar/NavBar";
+
 // importa la libreria redux-toolkit  npm install @reduxjs/toolkit
 const app = () => {
-  return <div>
-    <h1>Redux Toolkit Shopping Cart</h1>
-  </div>
-}
+  return <NavBar />;
+};
 
-export default app
+export default app;

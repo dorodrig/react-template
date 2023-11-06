@@ -5,6 +5,8 @@ import App from "./App.jsx";
 import { Provider } from "react-redux";
 // el conjunto de slice que puede tener un app
 import { store } from "./store";
+//importar de manera general los styles
+import "./styles/styles.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
