@@ -1,0 +1,8 @@
+.Languages {
+  display: flex;
+  justify-content: end;
+  gap: 5px;
+}
+.Languages span {
+  cursor: pointer;
+}/*# sourceMappingURL=Languages.css.map */

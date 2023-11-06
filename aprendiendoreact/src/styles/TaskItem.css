@@ -1,0 +1,20 @@
+.task {
+  background-color: #3aa5fd;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.task h3 {
+  color: #2c293a;
+  font-weight: 500;
+}
+.task:hover {
+  background-color: #076ca7;
+}
+.task .delete {
+  color: #2231fc;
+  cursor: pointer;
+}/*# sourceMappingURL=TaskItem.css.map */
