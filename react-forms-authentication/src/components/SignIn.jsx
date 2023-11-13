@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
-
+import InputPasssaword from "./InputPasssaword";
 const SignIn = () => {
   let { setStep } = useContext(AuthContext);
   return (
@@ -15,7 +15,7 @@ const SignIn = () => {
           </fieldset>
           <fieldset>
             <label htmlFor="password">password</label>
-            <input type="password" id="password" />
+            <InputPasssaword></InputPasssaword>
             <p className="error">Password is required</p>
           </fieldset>
           <button type="submit">login</button>
